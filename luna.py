@@ -16,8 +16,8 @@ else:
 luna = Client(
     ":memory:",
     bot_token=bot_token,
-    api_id=6,
-    api_hash="eb06d4abfb49dc3eeb1aeb98ae0f581e",
+    api_id=19234756,
+    api_hash="0eefc9672b4eb29e31dd7ed568c25c9a",
 )
 
 bot_id = int(bot_token.split(":")[0])
@@ -27,13 +27,13 @@ arq = None
 async def lunaQuery(query: str, user_id: int):
     query = (
         query
-        if LANGUAGE == "en"
-        else (await arq.translate(query, "en")).result.translatedText
+        if LANGUAGE == "vi"
+        else (await arq.translate(query, "vi")).result.translatedText
     )
     resp = (await arq.luna(query, user_id)).result
     return (
         resp
-        if LANGUAGE == "en"
+        if LANGUAGE == "vi"
         else (
             await arq.translate(resp, LANGUAGE)
         ).result.translatedText
@@ -53,8 +53,8 @@ async def type_and_send(message):
 @luna.on_message(filters.command("repo") & ~filters.edited)
 async def repo(_, message):
     await message.reply_text(
-        "[GitHub](https://github.com/thehamkercat/LunaChatBot)"
-        + " | [Group](t.me/PatheticProgrammers)",
+        "[GitHub](https://github.com/)"
+        + " | [Group](t.me/nguhanh69)",
         disable_web_page_preview=True,
     )
 
