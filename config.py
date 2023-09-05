@@ -10,8 +10,8 @@ if HEROKU:
 # NOTE Fill this if you are not deploying on heroku.
 if not HEROKU:
 
-    bot_token = "6201708385:AAERAJJ5BYkPgGXKogdqgpKkNWyY21O3lhs"
-    ARQ_API_KEY = "LCZFSR-XCJSNJ-JVHHXC-UUVLWE-ARQ"
+    bot_token = "6226805699:AAE1T96RKSjs06kNID7VW9xVsYaSOFDI92o"
+    ARQ_API_KEY = "QKILRQ-VUTFDL-MQBWZA-EGQFPM-ARQ" #"LCZFSR-XCJSNJ-JVHHXC-UUVLWE-ARQ"
 # List of supported languages >>
 # https://py-googletrans.readthedocs.io/en/latest/#googletrans-languages
     LANGUAGE = "vi"
