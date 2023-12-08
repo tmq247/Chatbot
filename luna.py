@@ -50,29 +50,31 @@ async def type_and_send(message):
     await message._client.send_chat_action(chat_id, "cancel")
 
 
-@luna.on_message(filters.command("repo") & ~filters.edited)
+
+repo = filters.command("repo")
+@luna.on_message(repo)
+@luna.on_edited_message(repo)
 async def repo(_, message):
     await message.reply_text(
         "[GitHub](https://github.com/)"
-        + " | [Group](t.me/nguhanh69)",
+        + " | [Group](t.me/muoimuoimusicbot)",
         disable_web_page_preview=True,
     )
 
-
-@luna.on_message(filters.command("help") & ~filters.edited)
+help = filters.command("help")
+@luna.on_message(help)
+@luna.on_edited_message(help)
 async def start(_, message):
     await luna.send_chat_action(message.chat.id, "typing")
     await sleep(2)
     await message.reply_text("/repo - Get Repo Link")
 
 
-@luna.on_message(
-    ~filters.private
-    & filters.text
-    & ~filters.command("help")
-    & ~filters.edited,
-    group=69,
-)
+help = filters.command("help")
+@luna.on_message(help & ~filters.private
+    & filters.text, group=69,)
+@luna.on_edited_message(help & ~filters.private
+    & filters.text, group=69,)
 async def chat(_, message):
     if message.reply_to_message:
         if not message.reply_to_message.from_user:
@@ -91,9 +93,8 @@ async def chat(_, message):
     await type_and_send(message)
 
 
-@luna.on_message(
-    filters.private & ~filters.command("help") & ~filters.edited
-)
+@luna.on_message(filters.private & ~filters.command("help"))
+@luna.on_edited_message(filters.private & ~filters.command("help"))
 async def chatpm(_, message):
     if not message.text:
         return
@@ -109,7 +110,7 @@ async def main():
     print(
         """
 -----------------
-| Luna Started! |
+| Luna Khởi động! |
 -----------------
 """
     )
