@@ -67,7 +67,7 @@ help = filters.command("help")
 @luna.on_message(help)
 @luna.on_edited_message(help)
 async def start(_, message):
-    await luna.send_chat_action(message.chat.id, "typing")
+    await luna.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
     await sleep(2)
     await message.reply_text("/repo - Get Repo Link")
 
