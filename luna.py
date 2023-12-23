@@ -64,7 +64,7 @@ async def type_and_send2(_, message):
 
 
 
-@luna.on_message(filters.photo & filters.sticker & filters.group)
+@luna.on_message(filters.reply & filters.photo  & filters.group)
 async def type_and_send3(_, message):
     chat_id = message.chat.id
     user_id = message.from_user.id if message.from_user else 0
