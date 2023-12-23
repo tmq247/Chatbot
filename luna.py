@@ -50,6 +50,16 @@ async def type_and_send(message):
     response, _ = await gather(lunaQuery(query, user_id), sleep(2))
     await message.reply_text(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
+    
+@luna.on_message(filters.regex("@muoimuoimusic"))
+async def type_and_send2(message):
+    chat_id = message.chat.id
+    user_id = message.from_user.id if message.from_user else 0
+    query = message.text.strip()
+    await message._client.send_chat_action(chat_id, enums.ChatAction.TYPING)
+    response, _ = await gather(lunaQuery(query, user_id), sleep(2))
+    await message.reply_text(response)
+    await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
 
 
