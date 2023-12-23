@@ -51,7 +51,7 @@ async def type_and_send(message):
     await message.reply_text(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
     
-@luna.on_message(filters.regex("@muoimuoimusic"))
+@luna.on_message(filters.regex("@muoimuoimusic") & filters.group)
 async def type_and_send2(_, message):
     chat_id = message.chat.id
     user_id = message.from_user.id if message.from_user else 0
