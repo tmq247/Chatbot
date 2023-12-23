@@ -76,7 +76,6 @@ async def type_and_send3(_, message):
 async def type_and_send4(message):
     chat_id = message.chat.id
     user_id = message.from_user.id if message.from_user else 0
-    
     await message._client.send_chat_action(chat_id, enums.ChatAction.TYPING)
     response = "đừng như thế,hãy nói chuyện với tôi bằng văn bản"
     await message.reply_text(response)
