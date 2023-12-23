@@ -86,9 +86,9 @@ async def type_and_send4(_, message):
 async def type_and_send3(_, message):
     chat_id = message.chat.id
     user_id = message.from_user.id if message.from_user else 0
-    query = message.text.strip()
+    #query = message.text.strip()
     await message._client.send_chat_action(chat_id, enums.ChatAction.TYPING)
-    response, _ = await gather(lunaQuery(query, user_id), sleep(2))
+    response = "hãy nói tiếng người đừng gửi sticker"
     await message.reply_text(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
