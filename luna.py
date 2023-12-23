@@ -73,26 +73,17 @@ async def type_and_send3(_, message):
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
 
-@luna.on_message(filters.reply & filters.sticker & filters.group)
-async def type_and_send4(_, message):
+async def type_and_send4(message):
     chat_id = message.chat.id
     user_id = message.from_user.id if message.from_user else 0
-    #query = message.text.strip()
+    
     await message._client.send_chat_action(chat_id, enums.ChatAction.TYPING)
-    response = "hãy nói tiếng người đừng gửi sticker"
+    response, _ = "đừng như thế,hãy nói chuyện với tôi bằng văn bản", sleep(2))
     await message.reply_text(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
         
 
-@luna.on_message(filters.reply & filters.animation & filters.group)
-async def type_and_send5(_, message):
-    chat_id = message.chat.id
-    user_id = message.from_user.id if message.from_user else 0
-    #query = message.text.strip()
-    await message._client.send_chat_action(chat_id, enums.ChatAction.TYPING)
-    response = "gửi gif cc nói chuyện đi"
-    await message.reply_text(response)
-    await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
+
 
 
 repo = filters.command("repo")
