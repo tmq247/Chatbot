@@ -72,6 +72,26 @@ async def type_and_send3(_, message):
     await message.reply_text(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
+@luna.on_message(filters.regex("/x") & filters.group)
+async def type_and_send5(_, message):
+    chat_id = message.chat.id
+    user_id = message.from_user.id if message.from_user else 0
+    #query = message.text.strip()
+    await message._client.send_chat_action(chat_id, enums.ChatAction.TYPING)
+    response = "/t 10000"
+    await message.reply_text(response)
+    await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
+
+@luna.on_message(filters.regex("/t") & filters.group)
+async def type_and_send6(_, message):
+    chat_id = message.chat.id
+    user_id = message.from_user.id if message.from_user else 0
+    #query = message.text.strip()
+    await message._client.send_chat_action(chat_id, enums.ChatAction.TYPING)
+    response = "/x 10000"
+    await message.reply_text(response)
+    await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
+
 
 async def type_and_send4(message):
     chat_id = message.chat.id
