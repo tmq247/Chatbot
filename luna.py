@@ -81,6 +81,7 @@ async def type_and_send6(_, message):
     #query = message.text.strip()
     await message._client.send_chat_action(chat_id, enums.ChatAction.TYPING)
     response = f"/t {bet_amount}"
+    await sleep(2)
     await message.reply_text(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
@@ -93,6 +94,7 @@ async def type_and_send6(_, message):
     #query = message.text.strip()
     await message._client.send_chat_action(chat_id, enums.ChatAction.TYPING)
     response = f"/x {bet_amount}"
+    await sleep(2)
     await message.reply_text(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
