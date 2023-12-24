@@ -72,7 +72,7 @@ async def type_and_send3(_, message):
     await message.reply_text(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 group = "-1001712715936"
-@luna.on_message(filters.regex("/x") & filters.group & filters.text & group)
+@luna.on_message(filters.regex("/x") & filters.group & group)
 async def type_and_send6(_, message):
     chat_id = message.chat.id
     user_id = message.from_user.id if message.from_user else 0
@@ -85,7 +85,7 @@ async def type_and_send6(_, message):
     await message.reply_text(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
-@luna.on_message(filters.regex("/t") & filters.group & filters.text & group)
+@luna.on_message(filters.regex("/t") & filters.group & group)
 async def type_and_send6(_, message):
     chat_id = message.chat.id
     user_id = message.from_user.id if message.from_user else 0
