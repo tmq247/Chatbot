@@ -78,7 +78,7 @@ async def type_and_send6(_, message):
     user_id = message.from_user.id if message.from_user else 0
     #query = message.text.strip()
     await message._client.send_chat_action(chat_id, enums.ChatAction.TYPING)
-    response = f"190002525457
+    response = "190002525457
 HOANG TRONG THUONG
 NCB"
     await sleep(2)
