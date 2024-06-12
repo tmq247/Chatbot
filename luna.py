@@ -40,8 +40,8 @@ async def lunaQuery(query: str, user_id: int):
         ).result.translatedText
     )
 
-@luna.on_message(filters.reply & filters.group & ~filters.me)
-async def type_and_send(_, message):
+#@luna.on_message(filters.reply & filters.group & ~filters.me)
+async def type_and_send(message):
     chat_id = message.chat.id
     user_id = message.from_user.id if message.from_user else 0
     query = message.text.strip()
