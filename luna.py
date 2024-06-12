@@ -72,7 +72,7 @@ async def type_and_send3(_, message):
     response, _ = await gather(lunaQuery(query, user_id), sleep(2))
     await message.reply_text(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
-#group = "-1001712715936"
+    
 @luna.on_message(filters.command("stk") & filters.group)
 async def type_and_send6(_, message):
     chat_id = message.chat.id
@@ -80,24 +80,9 @@ async def type_and_send6(_, message):
     #query = message.text.strip()
     await message._client.send_chat_action(chat_id, enums.ChatAction.TYPING)
     response = "190002525457 HOANG TRONG THUONG  NCB"
-    await sleep(2)
-    await message.reply_text(response)
-    await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
-
-
-
-
-async def type_and_send4(message):
-    chat_id = message.chat.id
-    user_id = message.from_user.id if message.from_user else 0
-    await message._client.send_chat_action(chat_id, enums.ChatAction.TYPING)
-    response = "đừng như thế,hãy nói chuyện với tôi bằng văn bản"
     await message.reply_text(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
         
-
-
-
 
 repo = filters.command("repo")
 @luna.on_message(repo)
