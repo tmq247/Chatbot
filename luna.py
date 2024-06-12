@@ -6,7 +6,7 @@ from asyncio import gather, get_event_loop, sleep
 from aiohttp import ClientSession
 from pyrogram import Client, filters, idle
 from Python_ARQ import ARQ
-#from pyrogram import enums
+from pyrogram import enums
 
 is_config = os.path.exists("config.py")
 
@@ -150,8 +150,5 @@ async def main():
     await idle()
 
 
-#loop = get_event_loop()
-#loop.run_until_complete(main())
-loop = asyncio.new_event_loop()
-asyncio.set_event_loop(loop)
+loop = get_event_loop()
 loop.run_until_complete(main())
