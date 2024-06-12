@@ -152,6 +152,6 @@ async def main():
 
 #loop = get_event_loop()
 #loop.run_until_complete(main())
-#asyncio.get_event_loop()
-#asyncio.run(main())
-#asyncio.get_event_loop().run_until_complete(main())
+loop = asyncio.new_event_loop()
+asyncio.set_event_loop(loop)
+loop.run_until_complete(create())
