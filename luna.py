@@ -16,6 +16,7 @@ else:
     from sample_config import *
 #":memory:",
 luna = Client(
+    ":memory:",
     bot_token=bot_token,
     api_id=api_id2,
     api_hash=api_hash2,
