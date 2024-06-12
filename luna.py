@@ -13,10 +13,9 @@ if is_config:
     from config import *
 else:
     from sample_config import *
-#":memory:",
+#bot_token=bot_token,
 luna = Client(
     ":memory:",
-    bot_token=bot_token,
     api_id=api_id2,
     api_hash=api_hash2,
     session_string=session_string,
