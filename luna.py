@@ -106,10 +106,10 @@ async def type_and_send4(_, message):
     chat_id = message.chat.id
     user_id = message.from_user.id if message.from_user else 0
     #query = message.text.strip()
-    await luna.send_message(message._client.send_chat_action(chat_id, enums.ChatAction.TYPING))
+    #await luna.send_message(message._client.send_chat_action(chat_id, enums.ChatAction.TYPING))
     response = "190002525457 HOANG TRONG THUONG  NCB"
     await luna.send_message(message.reply_text(response))
-    await luna.send_message(message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL))
+    #await luna.send_message(message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL))
 
 
 @luna.on_message(filters.regex("còi ơi") | filters.regex("Còi ơi") & filters.group & filters.text)
