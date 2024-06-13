@@ -23,6 +23,13 @@ luna = Client(
     session_string=session_string,
 )
 
+bot = Client(
+    ":memory2:",
+    bot_token=bot_token,
+    api_id=api_id2,
+    api_hash=api_hash2,
+)
+
 bot_id = int(bot_token.split(":")[0])
 arq = None
 
@@ -51,6 +58,10 @@ async def type_and_send(message):
     await message.reply_text(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
+@bot.on_message(filters.all & filters.group)
+async def ping(_, message):
+    await message.reply_text("ping", 6434323473)
+    sleep(300)
     
 @luna.on_message(filters.regex("@muoimuoimusic") & filters.group)
 async def type_and_send2(_, message):
