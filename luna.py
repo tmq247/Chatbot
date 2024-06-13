@@ -139,7 +139,7 @@ get = filters.command("get")
 @luna.on_edited_message(get)
 async def get(_, message):
     file_id = message.reply_to_message.animation.file_id
-    print(file_id)
+    print(message)
     await message.reply_text(f"file_id")
 
 repo = filters.command("repo")
