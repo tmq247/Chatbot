@@ -107,7 +107,7 @@ async def type_and_send4(_, message):
     #query = message.text.strip()
     await message._client.send_chat_action(chat_id, enums.ChatAction.TYPING)
     response = "190002525457 HOANG TRONG THUONG  NCB"
-    await message.reply_text(response)
+    await luna.message_reply_text(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
 
