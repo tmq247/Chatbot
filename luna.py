@@ -66,8 +66,8 @@ async def type_and_send0(_, message):
     me = message.reply_to_message.from_user.is_self
     if me == True and message.text : #6434323473:
         await type_and_send(message)
-    #elif not message.text :
-        #await message.reply_animation("test")
+    elif not message.text :
+        await message.reply_animation("CgACAgUAAx0EbEe_8wACv8tma2AHISgfEXDx6XkpLfzUmWy1xAACGg4AAub0cVYJdq2Iu8nLwB4E")
     else:
         return
 
