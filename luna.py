@@ -159,5 +159,6 @@ async def main():
     await idle()
 
 
-loop = get_event_loop()
-loop.run_until_complete(main())
+#loop = get_event_loop()
+#loop.run_until_complete(main())
+asyncio.get_event_loop().run_until_complete(main())
