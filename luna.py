@@ -161,6 +161,7 @@ async def main():
     arq = ARQ(ARQ_API_BASE_URL, ARQ_API_KEY, session)
 
     await luna.start()
+    await bot.start()
     print(
         """
 -----------------
