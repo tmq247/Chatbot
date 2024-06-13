@@ -89,13 +89,13 @@ async def type_and_send4(_, message):
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
 
-@luna.on_message(filters.regex("kem ơi") | filters.regex("Kem ơi") & filters.group)
+@luna.on_message(filters.regex("còi ơi") | filters.regex("Còi ơi") & filters.group)
 async def type_and_send5(_, message):
     chat_id = message.chat.id
     user_id = message.from_user.id if message.from_user else 0
     #query = message.text.strip()
     await message._client.send_chat_action(chat_id, enums.ChatAction.TYPING)
-    response = "kem đang ỉa, bạn ăn k ?"
+    response = "@COIAHYCOC có người kiếm."
     await message.reply_text(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
         
