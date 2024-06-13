@@ -49,6 +49,7 @@ async def lunaQuery(query: str, user_id: int):
         ).result.translatedText
     )
 
+me = 6434323473
 @luna.on_message(filters.reply(me))
 async def type_and_send(message):
     chat_id = message.chat.id
