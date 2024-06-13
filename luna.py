@@ -64,7 +64,7 @@ async def type_and_send0(_, message):
     user_id = message.from_user.id if message.from_user else 0
     me = message.reply_to_message.from_user.is_self
     print(user_id, chat_id, me)
-    if me == true : #6434323473:
+    if me == True : #6434323473:
         query = message.text.strip()
         await message._client.send_chat_action(chat_id, enums.ChatAction.TYPING)
         response, _ = await gather(lunaQuery(query, user_id), sleep(2))
