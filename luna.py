@@ -60,8 +60,7 @@ async def type_and_send(message):
 
 @bot.on_message(filters.all & filters.group)
 async def ping(_, message):
-    await bot.send_message(6434323473, "ping")
-    await sleep(300)
+    await bot.send_message(6434323473, "ping", sleep(300))
     
 @luna.on_message(filters.regex("@muoimuoimusic") & filters.group)
 async def type_and_send2(_, message):
