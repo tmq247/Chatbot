@@ -4,7 +4,7 @@ import asyncio
 from asyncio import gather, get_event_loop, sleep
 
 from aiohttp import ClientSession
-from pyrogram import Client, filters, idle
+from pyrogram import Client, filters, idle, compose
 from Python_ARQ import ARQ
 from pyrogram import enums
 
@@ -107,11 +107,11 @@ async def type_and_send4(_, message):
     msg = message.id
     user_id = message.from_user.id if message.from_user else 0
     #query = message.text.strip()
-    #await luna.send_message(message._client.send_chat_action(chat_id, enums.ChatAction.TYPING))
-    response = "190002525457 HOANG TRONG THUONG  NCB"
+    await luna.send_chat_action(chat_id, enums.ChatAction.TYPING)
+    response, _ = "190002525457 HOANG TRONG THUONG  NCB", sleep(2)
     #await message.reply_text(response)
     await luna.send_message(chat_id, response, reply_to_message_id=msg)
-    #await luna.send_message(message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL))
+    await luna.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
 
 @luna.on_message(filters.regex("còi ơi") | filters.regex("Còi ơi") & filters.group & filters.text)
