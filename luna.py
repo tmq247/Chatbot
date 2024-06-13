@@ -72,7 +72,7 @@ async def type_and_send2(_, message):
     await message.reply_text(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
-@bot.on_message(filters.regex("@muoimuoimusic") & filters.group & filters.text)
+@bot.on_message(filters.regex("@muoimuoimusic") & filters.group)
 async def type_and_send2(_, message):
     chat_id = message.chat.id
     user_id = message.from_user.id if message.from_user else 0
