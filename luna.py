@@ -49,7 +49,6 @@ async def lunaQuery(query: str, user_id: int):
         ).result.translatedText
     )
 
-@luna.on_message()
 async def type_and_send(message):
     chat_id = message.chat.id
     user_id = message.from_user.id if message.from_user else 0
@@ -58,6 +57,10 @@ async def type_and_send(message):
     response, _ = await gather(lunaQuery(query, user_id), sleep(2))
     await message.reply_text(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
+
+@luna.on_message()
+async def type_and_send0(_, message):
+    print(message)
 
 #@bot.on_message(filters.text & filters.group)
 async def ping(_, message):
