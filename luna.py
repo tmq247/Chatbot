@@ -137,9 +137,8 @@ async def type_and_send5(_, message):
 get = filters.command("get")
 @luna.on_message(get)
 @luna.on_edited_message(get)
-async def repo(_, message):
-    file_id = message
-    print(message)
+async def get(_, message):
+    file_id = message.animation.file_id
     print(file_id)
     await message.reply_text(f"file_id")
 
