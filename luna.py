@@ -52,7 +52,7 @@ async def type_and_send(message):
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
 me = filters.me
-@luna.on_message(filters.reply(me) & filters.group)
+@luna.on_message(filters.reply & me & filters.group)
 async def reply(_, message):
     await type_and_send()
     return
