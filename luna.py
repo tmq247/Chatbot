@@ -58,9 +58,7 @@ async def type_and_send(message):
     await message.reply_text(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
-@bot.on_message(filters.all & filters.group)
-async def ping(_, message):
-    await bot.send_message(6434323473, "ping", sleep(300))
+
     
 @luna.on_message(filters.regex("@muoimuoimusic") & filters.group)
 async def type_and_send2(_, message):
