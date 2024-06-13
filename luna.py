@@ -62,14 +62,12 @@ async def type_and_send(message):
 async def type_and_send0(_, message):
     chat_id = message.chat.id
     user_id = message.from_user.id if message.from_user else 0
-    if is_self == true:
-        query = message.text.strip()
-        await message._client.send_chat_action(chat_id, enums.ChatAction.TYPING)
-        response, _ = await gather(lunaQuery(query, user_id), sleep(2))
-        await message.reply_text(response)
-        await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
-    else:
-        return
+    query = message.text.strip()
+    await message._client.send_chat_action(chat_id, enums.ChatAction.TYPING)
+    response, _ = await gather(lunaQuery(query, user_id), sleep(2))
+    await message.reply_text(response)
+    await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
+    
     
 #@bot.on_message(filters.text & filters.group)
 async def ping(_, message):
