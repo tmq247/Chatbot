@@ -51,13 +51,6 @@ async def type_and_send(message):
     await message.reply_text(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
-user = 6434323473
-me = filters.user(user)
-@luna.on_message(filters.reply & me & filters.group)
-async def reply(_, message):
-    await type_and_send(message)
-    return
-
     
 @luna.on_message(filters.regex("@muoimuoimusic") & filters.group)
 async def type_and_send2(_, message):
