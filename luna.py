@@ -61,11 +61,12 @@ async def type_and_send(message):
 @luna.on_message()
 async def type_and_send0(_, message):
     me = message.reply_to_message.from_user.is_self
-    print(user_id, chat_id, me)
     if me == True : #6434323473:
         await type_and_send(message)
     else:
         return
+
+
     
     
 #@bot.on_message(filters.text & filters.group)
