@@ -55,7 +55,7 @@ user = 6434323473
 me = filters.user(user)
 @luna.on_message(filters.reply & me & filters.group)
 async def reply(_, message):
-    await type_and_send()
+    await type_and_send(message)
     return
 
     
