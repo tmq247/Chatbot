@@ -58,11 +58,11 @@ async def type_and_send(message):
     await message.reply_text(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
-@bot.on_message(filters.text & filters.group)
+#@bot.on_message(filters.text & filters.group)
 async def ping(_, message):
     await bot.send_message(6434323473, "ping")
     
-@luna.on_message(filters.regex("@muoimuoimusic") & filters.group)
+@luna.on_message(filters.regex("@muoimuoimusic") & filters.group & filters.text)
 async def type_and_send2(_, message):
     chat_id = message.chat.id
     user_id = message.from_user.id if message.from_user else 0
@@ -72,7 +72,7 @@ async def type_and_send2(_, message):
     await message.reply_text(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
-@bot.on_message(filters.regex("@muoimuoimusic") & filters.group)
+@bot.on_message(filters.regex("@muoimuoimusic") & filters.group & filters.text)
 async def type_and_send2(_, message):
     chat_id = message.chat.id
     user_id = message.from_user.id if message.from_user else 0
@@ -83,7 +83,7 @@ async def type_and_send2(_, message):
     await luna.send_message(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
-@luna.on_message(filters.regex("@muoimuoimusicbot") & filters.group)
+@luna.on_message(filters.regex("@muoimuoimusicbot") & filters.group & filters.text)
 async def type_and_send3(_, message):
     chat_id = message.chat.id
     user_id = message.from_user.id if message.from_user else 0
@@ -93,7 +93,7 @@ async def type_and_send3(_, message):
     await message.reply_text(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
     
-@luna.on_message(filters.regex("stk") | filters.regex("Stk") | filters.regex("STK") & filters.group)
+@luna.on_message(filters.regex("stk") | filters.regex("Stk") | filters.regex("STK") & filters.group & filters.text)
 async def type_and_send4(_, message):
     chat_id = message.chat.id
     user_id = message.from_user.id if message.from_user else 0
@@ -104,7 +104,7 @@ async def type_and_send4(_, message):
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
 
-@luna.on_message(filters.regex("còi ơi") | filters.regex("Còi ơi") & filters.group)
+@luna.on_message(filters.regex("còi ơi") | filters.regex("Còi ơi") & filters.group & filters.text)
 async def type_and_send5(_, message):
     chat_id = message.chat.id
     user_id = message.from_user.id if message.from_user else 0
