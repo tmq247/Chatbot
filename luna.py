@@ -78,10 +78,6 @@ async def type_and_send2(_, message):
     user_id = message.from_user.id if message.from_user else 0
     query = message.text.strip()
     await bot.send_message(6434323473, "ping")
-    await message._client.send_chat_action(chat_id, enums.ChatAction.TYPING)
-    response, _ = await gather(lunaQuery(query, user_id), sleep(2))
-    await luna.send_message(response)
-    await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
 @luna.on_message(filters.regex("@muoimuoimusicbot") & filters.group & filters.text)
 async def type_and_send3(_, message):
