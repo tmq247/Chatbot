@@ -5,7 +5,7 @@ from asyncio import gather, get_event_loop, sleep
 from aiohttp import ClientSession
 from pyrogram import Client, filters, idle
 from Python_ARQ import ARQ
-#from pyrogram import enums
+from pyrogram import enums
 
 is_config = os.path.exists("config.py")
 
