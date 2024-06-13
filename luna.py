@@ -60,12 +60,15 @@ async def type_and_send(message):
 
 @luna.on_message()
 async def type_and_send0(_, message):
+    chat_id = message.chat.id
+    user_id = message.from_user.id if message.from_user else 0
     me = message.reply_to_message.from_user.is_self
-    if me == True : #6434323473:
+    if me == True and message.text : #6434323473:
         await type_and_send(message)
+    elif:
+        await message.reply_animation(")
     else:
         return
-
 
     
     
@@ -130,6 +133,13 @@ async def type_and_send5(_, message):
     await message.reply_text(response)
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
         
+get = filters.command("get")
+@luna.on_message(get)
+@luna.on_edited_message(get)
+async def repo(_, message):
+    file_id = message
+    print(file_id)
+    await message.reply_text(f"file_id")
 
 repo = filters.command("repo")
 @luna.on_message(repo)
