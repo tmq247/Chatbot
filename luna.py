@@ -23,20 +23,18 @@ luna = Client(
     session_string=session_string,
 )
 
-bot = [
-    Client(
+bot = Client(
     ":memory2:",
     bot_token=bot_token,
     api_id=api_id2,
     api_hash=api_hash2,
-),
-    Client(
+)
+bot2 = Client(
     ":memory3:",
     bot_token="6226805699:AAF2bcvv7v1m7X_2A4u97X1F2ycXsjSHmwo",
     api_id=api_id2,
     api_hash=api_hash2,
 )
-]
 
 bot_id = int(bot_token.split(":")[0])
 arq = None
@@ -103,7 +101,7 @@ async def type_and_send4(_, message):
     await luna.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
 
-@bot.on_message((filters.regex("stk") | filters.regex("Stk") | filters.regex("STK")) & filters.text & filters.group)
+@bot2.on_message((filters.regex("stk") | filters.regex("Stk") | filters.regex("STK")) & filters.text & filters.group)
 async def type_and_send4(_, message):
     chat_id = message.chat.id
     msg = message.id
@@ -191,7 +189,8 @@ async def main():
     arq = ARQ(ARQ_API_BASE_URL, ARQ_API_KEY, session)
 
     await luna.start()
-    await compose(bot).start()
+    await bot.start()
+    await bot2.start()
     print(
         """
 -----------------
