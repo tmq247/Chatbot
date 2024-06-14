@@ -70,7 +70,7 @@ async def type_and_send0(_, message):
         else :
             await sleep(2)
             print(message)
-            await message.reply_animation("AAMCBQADHQRsR7_zAAK_y2ZrYAchKB8RcPHpeSkt_NSZbLXEAAIaDgAC5vRxVgl2rYi7ycvAAAgBAAdtAAceBA")
+            await message.reply_animation("CgACAgUAAx0CbEe_8wACwBZmbA2kzc9rzPRvnfGCM0gZibErBQACGg4AAub0cVYJdq2Iu8nLwB4E")
     else:
         return
 
