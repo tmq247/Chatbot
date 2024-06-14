@@ -83,7 +83,7 @@ async def type_and_send1(_, message):
 async def type_and_send3(_, message):
     await type_and_send(message)
     
-@luna.on_message(filters.regex("stk") | filters.regex("Stk") | filters.regex("STK"))
+@luna.on_message(filters.regex("stk") | filters.regex("Stk") | filters.regex("STK") & filters.text)
 async def type_and_send4(_, message):
     chat_id = message.chat.id
     user_id = message.from_user.id
