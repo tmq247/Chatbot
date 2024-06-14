@@ -23,12 +23,20 @@ luna = Client(
     session_string=session_string,
 )
 
-bot = Client(
+bot = [
+    Client(
     ":memory2:",
     bot_token=bot_token,
     api_id=api_id2,
     api_hash=api_hash2,
+),
+    Client(
+    ":memory3:",
+    bot_token=bot_token2,
+    api_id=api_id2,
+    api_hash=api_hash2,
 )
+]
 
 bot_id = int(bot_token.split(":")[0])
 arq = None
@@ -183,7 +191,7 @@ async def main():
     arq = ARQ(ARQ_API_BASE_URL, ARQ_API_KEY, session)
 
     await luna.start()
-    await bot.start()
+    await compose(bot).start()
     print(
         """
 -----------------
