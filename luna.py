@@ -89,7 +89,7 @@ stk = filters.regex("stk")
 @luna.on_message(filters.group | filters.private & filters.text & stk)
 async def type_and_send4(_, message):
     chat_id = message.chat.id
-    user_id = message.from_user.id if message.from_user else 0
+    user_id = message.from_user.id
     await luna.send_chat_action(chat_id, enums.ChatAction.TYPING)
     response = "190002525457 HOANG TRONG THUONG  NCB"
     await sleep(2)
@@ -100,7 +100,7 @@ stk = filters.regex("Stk")
 @luna.on_message(filters.group | filters.private & filters.text & stk)
 async def type_and_send4(_, message):
     chat_id = message.chat.id
-    user_id = message.from_user.id if message.from_user else 0
+    user_id = message.from_user.id 
     await luna.send_chat_action(chat_id, enums.ChatAction.TYPING)
     response = "190002525457 HOANG TRONG THUONG  NCB"
     await sleep(2)
@@ -111,7 +111,7 @@ stk = filters.regex("STK")
 @luna.on_message(filters.group | filters.private & filters.text & stk)
 async def type_and_send4(_, message):
     chat_id = message.chat.id
-    user_id = message.from_user.id if message.from_user else 0
+    user_id = message.from_user.id 
     await luna.send_chat_action(chat_id, enums.ChatAction.TYPING)
     response = "190002525457 HOANG TRONG THUONG  NCB"
     await sleep(2)
