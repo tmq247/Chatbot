@@ -83,40 +83,17 @@ async def type_and_send1(_, message):
 async def type_and_send3(_, message):
     await type_and_send(message)
 
-#stk = filters.regex("stk") | filters.regex("Stk") | filters.regex("STK")
-
-stk = filters.regex("stk") 
-@luna.on_message(filters.group | filters.private & filters.text & stk)
+stk = (filters.regex("stk") | filters.regex("Stk") | filters.regex("STK"))
+@luna.on_message((filters.group | filters.private) & filters.text & stk)
 async def type_and_send4(_, message):
     chat_id = message.chat.id
-    user_id = message.from_user.id
+    user_id = message.from_user.id if message.from_user else 0
     await luna.send_chat_action(chat_id, enums.ChatAction.TYPING)
     response = "190002525457 HOANG TRONG THUONG  NCB"
     await sleep(2)
     await message.reply_text(response)
     await luna.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
-stk = filters.regex("Stk") 
-@luna.on_message(filters.group | filters.private & filters.text & stk)
-async def type_and_send4(_, message):
-    chat_id = message.chat.id
-    user_id = message.from_user.id 
-    await luna.send_chat_action(chat_id, enums.ChatAction.TYPING)
-    response = "190002525457 HOANG TRONG THUONG  NCB"
-    await sleep(2)
-    await message.reply_text(response)
-    await luna.send_chat_action(chat_id, enums.ChatAction.CANCEL)
-
-stk = filters.regex("STK")
-@luna.on_message(filters.group | filters.private & filters.text & stk)
-async def type_and_send4(_, message):
-    chat_id = message.chat.id
-    user_id = message.from_user.id 
-    await luna.send_chat_action(chat_id, enums.ChatAction.TYPING)
-    response = "190002525457 HOANG TRONG THUONG  NCB"
-    await sleep(2)
-    await message.reply_text(response)
-    await luna.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
 #@bot.on_message(filters.regex("stk") | filters.regex("Stk") | filters.regex("STK") & filters.text)
 #@luna.on_message(filters.group)
