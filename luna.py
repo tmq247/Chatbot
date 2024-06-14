@@ -63,12 +63,13 @@ async def type_and_send0(_, message):
     #print(message)
     chat_id = message.chat.id
     user_id = message.from_user.id if message.from_user else 0
-    me = message.reply_to_message.from_user.is_self if message.reply_to_message else 0
-    if me == True and message.text : #6434323473:
-        await type_and_send(message)
-    elif not message.text :
-        await sleep(2)
-        await message.reply_animation("CgACAgUAAx0EbEe_8wACv8tma2AHISgfEXDx6XkpLfzUmWy1xAACGg4AAub0cVYJdq2Iu8nLwB4E")
+    me = message.reply_to_message.from_user.is_self if message.reply_to_message.from_user else 0
+    if me == True :
+        if message.text : #6434323473:
+            await type_and_send(message)
+        else not message.text :
+            await sleep(2)
+            await message.reply_animation("CgACAgUAAx0EbEe_8wACv8tma2AHISgfEXDx6XkpLfzUmWy1xAACGg4AAub0cVYJdq2Iu8nLwB4E")
     else:
         return
 
