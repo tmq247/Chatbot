@@ -32,7 +32,7 @@ bot = [
 ),
     Client(
     ":memory3:",
-    bot_token=bot_token2,
+    bot_token="6226805699:AAF2bcvv7v1m7X_2A4u97X1F2ycXsjSHmwo",
     api_id=api_id2,
     api_hash=api_hash2,
 )
