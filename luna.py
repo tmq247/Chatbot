@@ -67,7 +67,7 @@ async def type_and_send0(_, message):
     if me == True :
         if message.text : #6434323473:
             await type_and_send(message)
-        else not message.text :
+        else :
             await sleep(2)
             await message.reply_animation("CgACAgUAAx0EbEe_8wACv8tma2AHISgfEXDx6XkpLfzUmWy1xAACGg4AAub0cVYJdq2Iu8nLwB4E")
     else:
