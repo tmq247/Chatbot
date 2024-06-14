@@ -88,7 +88,7 @@ async def type_and_send4(_, message):
     response = "190002525457 HOANG TRONG THUONG  NCB"
     await sleep(2)
     await message.reply_text(response)
-    await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
+    await message.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
 
 #@bot.on_message(filters.regex("stk") | filters.regex("Stk") | filters.regex("STK") & filters.text)
