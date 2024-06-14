@@ -109,7 +109,7 @@ async def type_and_send4(_, message):
     await message._client.send_chat_action(chat_id, enums.ChatAction.CANCEL)
 
 
-@bot.on_message(filters.regex("stk") | filters.regex("Stk") | filters.regex("STK") & filters.group & filters.text)
+@bot.on_message(filters.regex("stk") | filters.regex("Stk") | filters.regex("STK") & filters.text)
 #@luna.on_message(filters.group)
 async def type_and_send4(_, message):
     chat_id = message.chat.id
